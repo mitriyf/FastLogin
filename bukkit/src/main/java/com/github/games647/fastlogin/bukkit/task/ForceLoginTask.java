@@ -28,6 +28,7 @@ package com.github.games647.fastlogin.bukkit.task;
 import com.github.games647.fastlogin.bukkit.BukkitLoginSession;
 import com.github.games647.fastlogin.bukkit.FastLoginBukkit;
 import com.github.games647.fastlogin.bukkit.event.BukkitFastLoginAutoLoginEvent;
+import com.github.games647.fastlogin.bukkit.event.BukkitFastLoginEvent;
 import com.github.games647.fastlogin.core.PremiumStatus;
 import com.github.games647.fastlogin.core.message.SuccessMessage;
 import com.github.games647.fastlogin.core.shared.FastLoginCore;
@@ -69,6 +70,7 @@ public class ForceLoginTask extends ForceLoginManagement<Player, CommandSender, 
         }
 
         plugin.getPremiumPlayers().put(player.getUniqueId(), status);
+        callBukkitFastLoginEvent(player.getName(), status);
     }
 
     @Override
@@ -76,6 +78,11 @@ public class ForceLoginTask extends ForceLoginManagement<Player, CommandSender, 
         BukkitFastLoginAutoLoginEvent event = new BukkitFastLoginAutoLoginEvent(session, profile);
         core.getPlugin().getServer().getPluginManager().callEvent(event);
         return event;
+    }
+
+    private void callBukkitFastLoginEvent(String username, PremiumStatus status) {
+        BukkitFastLoginEvent event = new BukkitFastLoginEvent(username, status);
+        core.getPlugin().getServer().getPluginManager().callEvent(event);
     }
 
     @Override

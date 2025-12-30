@@ -41,7 +41,7 @@
 
     <properties>
         <!-- Still force Java 8 for the remaining project -->
-        <maven.compiler.release>8</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
     </properties>
 
     <name>FastLoginCore</name>
