@@ -5,6 +5,17 @@
 Checks if a Minecraft player has a paid account (premium). If so, they can skip offline authentication (auth plugins).
 So they don't need to enter passwords. This is also called auto login (auto-login).
 
+
+# Warning!
+- ProtocolLib if you are using Java 11 you only need to download version 5.3.0!!!
+"Note: This will be the final release supporting Java 8. ProtocoLib 5.4.0 will require Java 17."
+Download:
+https://github.com/dmulloy2/ProtocolLib/releases/tag/5.3.0
+
+- Update JPirates to 1.1 on GitHub if you are using it.
+- The plugin supports all java versions starting from java 11. And all versions from 1.8+.
+- You can find all the ready-made configurations in the JPirates plugin: https://github.com/mitriyf/JPirates/releases
+
 ## Features
 
 * Detect paid accounts from others
